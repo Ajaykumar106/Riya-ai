@@ -550,13 +550,16 @@ auth.onAuthStateChanged(user => {
   } else {
     document.getElementById("authScreen").classList.remove("hide");
     document.getElementById("app").classList.remove("show");
-  }
-});
+auth.getRedirectResult().then(result => {
+  if (result.user) initUser(result.user);
+}).catch(e => console.log(e.message)); 
+  } 
+  });
 
 document.getElementById("googleBtn").onclick = async () => {
   try {
     const provider = new firebase.auth.GoogleAuthProvider();
-    await auth.signInWithPopup(provider);
+    await auth.signInWithRedirect(provider);
   } catch(e) {
     const err = document.getElementById("authErr");
     err.textContent = "Sign in failed. Try again.";
