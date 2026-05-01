@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
 <title>Riya AI — Your AI. Your Universe.</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -518,16 +518,15 @@ html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--t
 
 <script>
 // ── CONFIG ── Replace with your Firebase config ──
-const firebaseConfig = {
+const FIREBASE_CONFIG = {
   apiKey: "AIzaSyBl1xDUshkJEOrGTbmCGpbNcIi1pHEtDYA",
   authDomain: "riya-ai-2c24e.firebaseapp.com",
   projectId: "riya-ai-2c24e",
   storageBucket: "riya-ai-2c24e.firebasestorage.app",
   messagingSenderId: "395591480225",
-  appId: "1:395591480225:web:b012598639e0c347d911e0",
-  measurementId: "G-LGTGY3QG9S"
+  appId: "1:395591480225:web:b012598639e0c347d911e0"
 };
-  
+
 const BACKEND = "https://riya-backend-ujz7.onrender.com";
 
 // ── STATE ──
