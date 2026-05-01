@@ -542,6 +542,8 @@ firebase.initializeApp(FIREBASE_CONFIG);
 const auth = firebase.auth();
 const db = firebase.firestore();
 
+auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(() => {});
+
 auth.onAuthStateChanged(user => {
   if (user) {
     currentUser = user;
@@ -553,8 +555,10 @@ auth.onAuthStateChanged(user => {
 });
 
 auth.getRedirectResult().then(result => {
-  if (result && result.user) initUser(result.user);
-}).catch(e => console.log("Redirect error:", e.message));
+  if (result && result.user) {
+    console.log('Redirect login success:', result.user.email);
+  }
+}).catch(e => console.log('Redirect error:', e.message));
 
 document.getElementById("googleBtn").onclick = async () => {
   try {
